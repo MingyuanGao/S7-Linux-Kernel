@@ -1,0 +1,20 @@
+1. Linux kernel source code and toolchain are downloaded from TGP Kernel.
+
+2. On Linux Kernel Configuration File "mbfs-herolte-defconfig"
+=============================================================
+
+mbfs-herolte-defconfig is "tgpkernel-herolte-defconfig" + "debugging options"	
+$ make -C kernel ARCH=arm64 CROSS_COMPILE=aarch64- tgpkernel-herolte_defconfig
+$ make -C kernel ARCH=arm64 CROSS_COMPILE=aarch64- nconfig
+
+3. Changes to Linux kernel
+==========================
+
+In scripts/link-vmlinux.sh, removed the "FIPS with KASLR" part.
+
+4. Steps to build boot.img for S7
+=================================
+
+# Under project top dir  
+$ source envsetup.sh
+$ make 
